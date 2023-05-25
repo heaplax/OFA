@@ -19,7 +19,7 @@ export MASTER_PORT=2333
 export RANK=0 
 
 data_dir=../../dataset/clevr_data
-data=${data_dir}/clevr_train.tsv,${data_dir}/clevr_val.tsv
+data=${data_dir}/clevr_train2.tsv,${data_dir}/clevr_val.tsv
 # Note: If you have shuffled the data in advance, please uncomment the line below.
 # data=${data_dir}/vqa_train_1.tsv,${data_dir}/vqa_train_2.tsv,${data_dir}/vqa_train_3.tsv,${data_dir}/vqa_train_4.tsv,${data_dir}/vqa_train_5.tsv,${data_dir}/vqa_train_6.tsv,${data_dir}/vqa_train_7.tsv,${data_dir}/vqa_train_8.tsv,${data_dir}/vqa_train_9.tsv,${data_dir}/vqa_train_10.tsv,${data_dir}/vqa_val.tsv
 ans2label_file=../../dataset/clevr_data/clevr_answers.pkl
