@@ -14,7 +14,7 @@ WORKER_CNT=1
 # The ip address of the rank-0 worker, for single-worker training, please set to localhost
 export MASTER_ADDR=localhost
 # The port for communication
-export MASTER_PORT=8214
+export MASTER_PORT=2333
 # The rank of this worker, should be in {0, ..., WORKER_CNT-1}, for single-worker training, please set to 0
 export RANK=0 
 
@@ -38,7 +38,7 @@ arch=ofa_base
 criterion=adjust_label_smoothed_cross_entropy
 label_smoothing=0.1
 batch_size=1
-update_freq=4
+update_freq=16
 resnet_drop_path_rate=0.0
 encoder_drop_path_rate=0.2
 decoder_drop_path_rate=0.2
