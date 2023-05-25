@@ -8,7 +8,7 @@
 # To use the shuffled data (if exists), please uncomment the Line 24.
 
 # Number of GPUs per GPU worker
-GPUS_PER_NODE=1 
+GPUS_PER_NODE=4 
 # Number of GPU workers, for single-worker training, please set to 1
 WORKER_CNT=1 
 # The ip address of the rank-0 worker, for single-worker training, please set to localhost
@@ -37,7 +37,7 @@ task=vqa_gen
 arch=ofa_base
 criterion=adjust_label_smoothed_cross_entropy
 label_smoothing=0.1
-batch_size=4
+batch_size=1
 update_freq=4
 resnet_drop_path_rate=0.0
 encoder_drop_path_rate=0.2
