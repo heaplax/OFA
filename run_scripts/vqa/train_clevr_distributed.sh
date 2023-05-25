@@ -60,11 +60,11 @@ ema_start_update=0
 # As mentioned in the readme, you can choose from allcand or beamsearch evaluation, default to allcand
 val_inference_type=beamsearch
 
-for total_num_updates in {400,}; do
+for total_num_updates in {40000,}; do
   echo "total_num_updates "${total_num_updates}
-  for warmup_updates in {10,}; do
+  for warmup_updates in {1000,}; do
     echo "warmup_updates "${warmup_updates}  
-    for lr in {5e-3,}; do
+    for lr in {5e-5,}; do
       echo "lr "${lr}
       for patch_image_size in {384,}; do
         echo "patch_image_size "${patch_image_size}
@@ -111,7 +111,7 @@ for total_num_updates in {400,}; do
             --log-format=simple \
             --log-interval=10 \
             --fixed-validation-seed=7 \
-            --keep-last-epochs=15 \
+            --keep-last-epochs=5 \
             --save-interval=1 --validate-interval=1 \
             --max-update=${total_num_updates} \
             --best-checkpoint-metric=vqa_score --maximize-best-checkpoint-metric \
