@@ -48,7 +48,7 @@ max_src_length=80
 max_object_length=30
 max_tgt_length=30
 num_bins=1000
-patch_image_size=480
+patch_image_size=384
 
 uses_ema="--uses-ema"
 store_ema="--store-ema"
@@ -58,15 +58,15 @@ ema_start_update=0
 
 # Specify the inference type in validation after each fine-tuning epoch
 # As mentioned in the readme, you can choose from allcand or beamsearch evaluation, default to allcand
-val_inference_type=allcand
+val_inference_type=beamsearch
 
-for total_num_updates in {40000,}; do
+for total_num_updates in {400,}; do
   echo "total_num_updates "${total_num_updates}
-  for warmup_updates in {1000,}; do
+  for warmup_updates in {10,}; do
     echo "warmup_updates "${warmup_updates}  
-    for lr in {5e-5,}; do
+    for lr in {5e-3,}; do
       echo "lr "${lr}
-      for patch_image_size in {480,}; do
+      for patch_image_size in {384,}; do
         echo "patch_image_size "${patch_image_size}
 
         log_file=${log_dir}/${total_num_updates}"_"${warmup_updates}"_"${lr}"_"${patch_image_size}"_rank"${RANK}".log"
