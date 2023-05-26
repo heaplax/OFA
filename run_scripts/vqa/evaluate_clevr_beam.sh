@@ -12,7 +12,7 @@ split=$1
 
 data=../../dataset/clevr_data/clevr_${split}.tsv
 ans2label_file=../../dataset/clevr_data/clevr_answers.pkl
-path=../../checkpoints/15epoch.pt
+path=../../checkpoints/checkpoint_clevr_71acc.pt
 result_path=../../results/clevr_${split}_beam
 selected_cols=0,5,2,3,4
 
